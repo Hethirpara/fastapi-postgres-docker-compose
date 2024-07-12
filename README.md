@@ -33,23 +33,6 @@ db_password = 'your_password'
 db_name = 'your_dbname'
 db_host = 'your_hostname'
 db_port = 'your_port_number'
-3
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 uvicorn main:app --reload
