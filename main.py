@@ -70,10 +70,7 @@ def filter_coins(request_body: CoinRequestBody, db: Session = Depends(get_db)):
         if request_body.filter and request_body.filter.field_name and request_body.filter.field_value:
             filter_field_name = request_body.filter.field_name
             filter_field_value = request_body.filter.field_value
-            if filter_field_name == 'name':
-                query = query.where(coin_data.c.name.ilike(f"%{filter_field_value}%"))
-            else:
-                query = query.where(getattr(coin_data.c, filter_field_name) == filter_field_value)
+            query = query.where(getattr(coin_data.c, filter_field_name) == filter_field_value)
 
         # Apply sorting if provided
         if request_body.sort and request_body.sort.sort_by and request_body.sort.sort_order:
