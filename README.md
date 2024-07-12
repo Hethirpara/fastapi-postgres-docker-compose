@@ -1,37 +1,44 @@
-# Coin Data API
+# FastAPI App with Docker and PostgreSQL
 
-This FastAPI application allows you to manage and retrieve cryptocurrency data from a PostgreSQL database. You can filter, sort, and paginate the data using the provided endpoints. The application is also equipped with Swagger UI for easy interaction with the API.
+This repository has a FastAPI app with Docker and PostgreSQL. It filters, sorts, and paginates coin data.
 
-## Features
+## How It Works
 
-- **Filter**: Filter data based on specific fields.
-- **Sort**: Sort data by various fields in ascending or descending order.
-- **Pagination**: Paginate the data to manage large datasets efficiently.
+- **Filtering:** Choose data by different fields.
+- **Sorting:** Arrange data by fields in ascending or descending order.
+- **Pagination:** Get data in parts for better performance.
 
-## Requirements
+## Tech Used
 
-- Python 3.8+
-- PostgreSQL
-- FastAPI
-- SQLAlchemy
-- Pydantic
+- **FastAPI:** Python web framework.
+- **Docker:** Containers for easy deployment.
+- **PostgreSQL:** Database for coin data.
+- **SQLAlchemy:** Maps Python objects to database rows.
+- **Pydantic:** Validates and manages data.
 
 ## Setup
 
-### Step 1: Clone the Repository
+### Before You Start
 
-```bash
-git clone <repository-url>
-cd <repository-directory>
+- Docker must be installed.
+- PostgreSQL should be running locally or remotely.
 
-python -m venv venv
-source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
-pip install -r requirements.txt
+### Starting the App
 
-db_user = 'your_username'
-db_password = 'your_password'
-db_name = 'your_dbname'
-db_host = 'your_hostname'
-db_port = 'your_port_number'
+1. **Clone the repo:**
 
-uvicorn main:app --reload
+   ```bash
+   git clone <repository_url>
+   cd <repository_directory>
+
+   docker-compose build
+
+    docker-compose up -d
+
+    Open http://localhost:8000/docs in your browser to use the API with Swagger UI.
+
+    
+This markdown code snippet can be directly used in your `README.md` file on GitHub to provide clear instructions and documentation for your FastAPI application with Docker and PostgreSQL.
+
+
+
